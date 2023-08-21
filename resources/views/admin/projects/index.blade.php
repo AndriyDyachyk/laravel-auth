@@ -14,7 +14,7 @@
                                 {{$project->id}}
                             </div>
                             <div class="d-flex">
-                                <a href="#" class="btn btn-sm btn-primary mx-2">
+                                <a href="{{ route('admin.projects.show', $project->id) }}" class="btn btn-sm btn-primary mx-2">
                                 <i class="fas fa-eye"></i>
                                 </a>
                                 <a href="#" class="btn btn-sm btn-warning mx-2">
