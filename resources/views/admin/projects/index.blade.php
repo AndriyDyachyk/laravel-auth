@@ -3,8 +3,13 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-12 mt-5">
-                <h1>I miei progetti</h1>
+            <div class="col-12 mt-5 " >
+                <div class="d-flex justify-content-between">
+                    <h1>I miei progetti</h1>
+                    <a href="{{ route('admin.projects.create') }}" class="btn btn-sm btn-primary d-flex justify-content-center align-items-center" style="height: 50px; width:50px;">
+                        <i class="fas fa-plus"></i>
+                    </a>
+                </div>
                 <div class="col-12 mt-5">
                     @foreach ($projects as $project)
                     <div class="card my-4">
@@ -14,7 +19,7 @@
                                 {{$project->id}}
                             </div>
                             <div class="d-flex">
-                                <a href="{{ route('admin.projects.show', $project->id) }}" class="btn btn-sm btn-primary mx-2">
+                                <a href="{{ route('admin.projects.show', $project->id) }}" class="btn btn-sm btn-primary mx-2" data-toggle="tooltip" data-placement="bottom" title="Aggiungi un nuovo progetto">
                                 <i class="fas fa-eye"></i>
                                 </a>
                                 <a href="#" class="btn btn-sm btn-warning mx-2">
