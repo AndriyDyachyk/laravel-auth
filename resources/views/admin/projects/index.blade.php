@@ -22,10 +22,10 @@
                                 <a href="{{ route('admin.projects.show', $project->id) }}" class="btn btn-sm btn-primary mx-2" data-toggle="tooltip" data-placement="bottom" title="Aggiungi un nuovo progetto">
                                 <i class="fas fa-eye"></i>
                                 </a>
-                                <a href="#" class="btn btn-sm btn-warning mx-2">
+                                <a href="{{ route('admin.projects.edit', $project->id) }}" class="btn btn-sm btn-warning mx-2">
                                     <i class="fas fa-edit"></i>
                                 </a>
-                                <form class="d-line-block" action="#" method="POST">
+                                <form class="d-line-block" action="{{ route('admin.projects.destroy', $project->id) }}" onsubmit="return confirm('Sei sicuro di voler cancellare questo projetto?')" method="POST">
                                     @csrf
                                     @method('DELETE')
                                     <button class="btn btn-sm btn-danger mx-2">
