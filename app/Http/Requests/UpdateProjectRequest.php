@@ -27,6 +27,7 @@ class UpdateProjectRequest extends FormRequest
             'title' => 'required|max:50',
             'description' => 'max:500',
             'used_apps' => 'max:50',
+            'img' => 'image|max:250'
         ];
     }
 
@@ -37,6 +38,8 @@ class UpdateProjectRequest extends FormRequest
             'title.max' => 'Il titolo non può essere più lungo di :max caratteri',
             'description.max' => 'La descrizione non può essere più lunga di :max caratteri',
             'used_apps.max' => 'le app utilizzate non può essere più lunghe di :max caratteri',
+            'img.image' => 'Il file deve essere un immagine',
+            'img.max' => 'Il file non può essere più lungo di :max caratteri'
         ];
     }
 }

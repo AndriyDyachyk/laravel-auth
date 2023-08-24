@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('title', 50);
             $table->text('description')->nullable();
             $table->text('used_apps')->nullable();
+            $table->text('img')->nullable();
 
             $table->timestamps();
         });

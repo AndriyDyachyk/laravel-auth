@@ -9,7 +9,7 @@
     </div>
     <div>
         <div class="col-12 d-flex justify-content-center ">
-            <form action="{{ route('admin.projects.store')}}" method="POST" class="col-6 justify-content-center">
+            <form action="{{ route('admin.projects.store')}}" method="POST" class="col-6 justify-content-center" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group mb-3">
                     <label class="control-label">Titolo: </label>

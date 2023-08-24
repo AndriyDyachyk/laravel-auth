@@ -10,7 +10,7 @@
             </div>
         </div>
         <div class="col-12 mb-5">
-            <form action=" {{ Route('admin.projects.update', $project->id) }} " method="POST">
+            <form action=" {{ Route('admin.projects.update', $project->id) }} " method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 <div class="form-group border p-4">
@@ -20,6 +20,16 @@
                             <label class="control-label my-3">Nome</label>
                             <input type="text" name="title" id="title" placeholder="Modifica il Titolo" class="form-control" value="{{ old('title') ?? $project->title }}" required>
                             @error('title')
+                                <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <div class="form-group mb-3">
+                            <div>
+                                <img src="{{ asset('storage/'.$project->img)}}" width="500px">
+                            </div>
+                            <label class="control-label">Immagine:</label>
+                            <input type="file" name="img" id="img" class="form-control" >
+                            @error('img')
                                 <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
